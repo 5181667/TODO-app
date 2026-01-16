@@ -4,6 +4,28 @@
 
 ---
 
+## 🐳 Docker 一键部署（推荐）
+
+这是最简单的部署方式，不需要手动安装 Python 或 PostgreSQL。
+
+### 1. 安装 Docker
+确保你的电脑或服务器已安装 [Docker Desktop](https://www.docker.com/products/docker-desktop/) 或 Docker Engine。
+
+### 2. 启动服务
+```bash
+docker-compose up -d
+```
+
+### 3. 访问应用
+打开浏览器访问：http://localhost:8080
+
+### 4. 停止服务
+```bash
+docker-compose down
+```
+
+---
+
 ## 📁 项目结构
 
 ```

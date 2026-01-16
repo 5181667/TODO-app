@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    restart: always
+    ports:
+      - "8080:5000"  # 将宿主机 8080 映射到容器 5000
+    environment:
+      - DATABASE_URL=postgresql://todo_user:TodoPassword123@db:5432/todo_db
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=todo_user
+      - POSTGRES_PASSWORD=TodoPassword123
+      - POSTGRES_DB=todo_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
